@@ -1,0 +1,769 @@
+
+
+<dash>:
+
+
+########################################side button
+    Box:
+        id:bx
+        orientation:'vertical'
+        #pos_hint:{'x':.1}
+        size_hint_x:.05
+        md_bg_color: "#2196f3"
+    ScrollView:
+
+        do_scroll_x: False
+        do_scroll_y: True
+        size_hint_y:.99
+        size_hint_x:.05
+        #pos_hint:{'x':.1,'y':.1}
+        #
+
+
+
+        MDGridLayout:
+            cols:1
+            size:(root.width,root.height)
+            size_hint_x:.95
+            size_hint_y:None
+            height:self.minimum_height
+            md_bg_color: "#2196f3"
+            spacing:10
+            padding:10
+
+
+
+            FBtn:
+                #pos_hint: {"center_x": .5, "center_y": .5}
+                icon: "apps"
+                md_bg_color: "#2196f3"
+                on_press:nav_drawer.set_state('toggle')
+
+
+            FBtn:
+                #pos_hint: {"center_x": .5, "center_y": .89}
+                icon: "home"
+                md_bg_color:"#2196f3"
+                on_press:nav_drawer.set_state('toggle')
+
+
+            FBtn:
+
+                icon: "heart"
+                #pos_hint: {"center_x": .5, "center_y": .79}
+                md_bg_color: "#2196f3"
+                on_press:nav_drawer.set_state('toggle')
+
+            FBtn:
+                #pos_hint: {"center_x": .5, "center_y": .69}
+                icon: "rss"
+                md_bg_color: "#2196f3"
+                on_press:nav_drawer.set_state('toggle')
+
+            FBtn:
+                #pos_hint: {"center_x": .5, "center_y": .59}
+                icon: "cog"
+                md_bg_color:"#2196f3"
+                on_press:nav_drawer.set_state('toggle')
+####################################header
+    AnchorLayout:
+        #md_bg_color: 0,23,2,23
+        anchor_x:'right'
+        anchor_y:'top'
+
+        Crd:
+            spacing:10
+            padding:10
+            md_bg_color:"#2196f3"
+            elevation: 3
+            radius:0,0,0,0
+            size_hint_y:.25
+            size_hint_x:.95
+
+            MRLyt:
+
+                Image:
+                    source: '/usr/js/python_project/kivy/project/kvproject3/img/pro.png'
+                    pos_hint: {"center_x": .1,"center_y":.5}
+                MDTextField:
+                    mode: "rectangle"
+                    hint_text: "Google"
+                    line_color_normal: "#0d47a1"
+                    pos_hint: {"center_x": .75,"center_y":.88}
+                    size_hint: .2,.2
+
+
+
+                MBtn:
+                    on_press: app.root.current = 'menu'
+                    icon: "magnify"
+                    theme_icon_color: "Custom"
+                    icon_color: "#0d47a1"
+                    elevation: 5
+
+                    pos_hint: {"center_x": .86, "center_y": .88}
+                MBtn:
+                    on_press: app.root.current = 'menu'
+                    icon: "earth"
+                    theme_icon_color: "Custom"
+                    icon_color: "#0d47a1"
+
+                    pos_hint: {"center_x": .89, "center_y": .88}
+                MBtn:
+                    on_press: app.root.current = 'menu'
+                    icon: "home"
+                    theme_icon_color: "Custom"
+                    icon_color: "#0d47a1"
+
+                    pos_hint: {"center_x": .92, "center_y": .88}
+                MBtn:
+                    on_press: app.root.current = 'menu'
+                    icon: "email"
+                    theme_icon_color: "Custom"
+                    icon_color: "#0d47a1"
+
+                    pos_hint: {"center_x": .95, "center_y": .88}
+                MBtn:
+                    on_press: app.root.current = 'menu'
+                    icon: "cog"
+                    theme_icon_color: "Custom"
+                    icon_color: "#0d47a1"
+
+                    pos_hint: {"center_x": .98, "center_y": .88}
+
+
+
+
+
+#################################bottom
+    AnchorLayout:
+        #md_bg_color: 0,23,2,23
+        anchor_x:'right'
+        anchor_y:'bottom'
+
+        Crd:
+            spacing:10
+            padding:10
+            md_bg_color: "#2196f3"
+            elevation: 0
+            radius:0,0,0,0
+            size_hint_y:.05
+            size_hint_x:.95
+            MDLbl:
+                text: "Python Devlopment "
+                halign: "left"
+                theme_text_color: "Custom"
+                pos_hint: {"center_y": .1}
+                text_color:"#0d47a1"
+                font_size:20
+
+            MDLbl:
+                text: "Created By Vee Yes Softwere "
+                halign: "right"
+                theme_text_color: "Custom"
+                pos_hint: {"center_y":.1}
+
+                text_color:"#0d47a1"
+                font_size:20
+
+##################################items
+    ScrollView:
+
+        do_scroll_x: False
+        do_scroll_y: True
+        size_hint_y:.7
+        size_hint_x:.96
+        pos_hint:{'x':.05,'y':.05}
+
+        MDGridLayout:
+            cols:1
+            size:(root.width,root.height)
+            size_hint_x:.99
+            size_hint_y:None
+            height:self.minimum_height
+            #row_default_height:500
+            #row_force_default: True
+            id:scr
+            Crd:
+                #row:1
+               # orientation:'vertical'
+                spacing:5
+                padding:5
+                md_bg_color:1,0,0,0
+                elevation: 0
+                radius:0,0,0,0
+                size_hint_y:None
+                Crd:
+                   # orientation:'vertical'
+
+                    spacing:5
+                    padding:5
+                    md_bg_color:"#9c27b0"
+                    elevation: 0
+                    radius:25,25,25,25
+                    MRLyt:
+                        radius:25,25,25,25
+                        md_bg_color:"#9c27b0"
+
+                        MDLbl:
+                            text:'New Account:'
+                            font_size:20
+                            color:"black"
+                           
+                            size_hint:None,None
+                        MDLbl:
+                            text:'4200'
+                            font_size:40
+                            color:"black"
+                            pos_hint: {"center_x": .5,"center_y":.5}
+                            size_hint:None,None
+
+                        MBtn:
+                            icon: "account"
+                            pos_hint: {"center_x": .85,"center_y":.5}
+                            theme_icon_color: "Custom"
+                            icon_color: "#ab47bc"
+
+                Crd:
+                    #orientation:'vertical'
+
+                    spacing:5
+                    padding:5
+                    md_bg_color:"#18ffff"
+                    elevation: 0
+                    radius:25,25,25,25
+                    MRLyt:
+                        radius:25,25,25,25
+                        md_bg_color:"#18ffff"
+                        MDLbl:
+                            text:'Totol process:'
+                            font_size:20
+                            color:"black"
+                            pos_hint: {"center_x": .2,"center_y":.7}
+                            size_hint:None,None
+                        MDLbl:
+                            text:'3700%'
+                            font_size:40
+                            color:"black"
+                            pos_hint: {"center_x": .5,"center_y":.5}
+                            size_hint:None,None
+
+                        MBtn:
+                            icon: "cpu-64-bit"
+                            pos_hint: {"center_x": .85,"center_y":.5}
+                            theme_icon_color: "Custom"
+                            icon_color: "#0097a7"
+                Crd:
+                   # orientation:'vertical'
+                    #row:2
+                    spacing:5
+                    padding:5
+                    md_bg_color:"#fdd835"
+                    elevation: 0
+                    radius:25,25,25,25
+                    MRLyt:
+                        radius:25,25,25,25
+                        md_bg_color:"#fdd835"
+                        MDLbl:
+                            text:'Company value:'
+                            font_size:20
+                            color:"black"
+                            pos_hint: {"center_x": .2,"center_y":.7}
+                            size_hint:None,None
+                        MDLbl:
+                            text:'400%'
+                            font_size:40
+                            color:"black"
+                            pos_hint: {"center_x": .5,"center_y":.5}
+                            size_hint:None,None
+
+                        MBtn:
+                            icon: "domain"
+                            pos_hint: {"center_x": .85,"center_y":.5}
+                            theme_icon_color: "Custom"
+                            icon_color: "#ffa000"
+
+                Crd:
+                   # orientation:'vertical'
+                    #row:2
+                    spacing:5
+                    padding:5
+                    md_bg_color:"#e91e63"
+                    elevation: 0
+                    radius:25,25,25,25
+                    MRLyt:
+                        radius:25,25,25,25
+                        md_bg_color:"#e91e63"
+                        MDLbl:
+                            text:'NEW EMPLOYES'
+                            color:"black"
+                            font_size:20
+                            pos_hint: {"center_x": 0.2,"center_y":.7}
+                            size_hint:None,None
+                        MDLbl:
+                            text:'3000%'
+                            font_size:40
+                            color:"black"
+                            pos_hint: {"center_x": .6,"center_y":.5}
+                            size_hint:None,None
+
+                        MBtn:
+                            icon: "account"
+                            pos_hint: {"center_x": .85,"center_y":.5}
+                            theme_icon_color: "Custom"
+                            icon_color: "#0097a7"
+
+            Crd:
+                #id:row2
+                orientation:'vertical'
+                spacing:0
+                padding:5
+                md_bg_color:1,0,0,0
+                elevation: 0
+                radius:0,0,0,0
+
+
+                Crd:
+                    #row:2
+                    spacing:10
+                    padding:10
+                    md_bg_color:1,0,0,0
+                    elevation: 0
+                    radius:0,0,0,0
+                    Crd:
+                        spacing:10
+                        padding:0
+                        md_bg_color:app.theme_cls.primary_light
+                        elevation: 0
+                        radius:10,10,10,10
+                        orientation:'vertical'
+                        #size_hint: None, None
+                       # size: "500dp", "500dp"
+
+
+
+                        Crd:
+                            orientation:'vertical'
+                            elevation: 3
+                            radius:5,5,25,25
+                            md_bg_color:"#ff7043"
+                            elevation: 2
+                            MRLyt:
+
+                                radius:5,5,25,25
+                                md_bg_color:"#ff7043"
+                              
+                                MDRectangleFlatButton:
+                                    text: "process"
+                                    font_size: 10
+                                    size_hint: .1,.1
+                                    pos_hint: {"center_x":.5}
+                                    text_color:"white"
+                                    md_bg_color:"#ab47bc"
+                                    on_press: root.clk()
+
+
+
+
+
+                                ###############################
+                                MDLbl:
+                                    id:cpu
+                                    text:'0%'
+                                    color:0,0,2,1
+                                    pos_hint: {"center_x": .25,"center_y":.57}
+                                    size_hint:None,None
+                                    width:100
+                                    hight:100
+                                    val:0
+                                    canvas.before:
+                                        Color:
+                                            rgba: 0,0,2,1
+                                        Ellipse:
+                                            size:self.size
+                                            pos:self.pos
+
+                                        Color:
+                                            rgba: 1, 3, 3, 5
+                                        Ellipse:
+                                            size:self.size
+                                            pos:self.pos
+                                            angle_end:self.val
+
+                                        Color:
+                                            rgba: 1, 1, 0, 5
+                                        Ellipse:
+                                            size:[self.width - 30,self.width -30]
+                                            pos:[(self.center_x - (self.width - 30)/2),(self.center_y -(self.hight - 30)/2)]
+                                ###############
+                                MDLbl:
+                                    id:ram
+                                    text:'0%'
+                                    color:0,0,2,1
+                                    pos_hint: {"center_x": 0.75,"center_y":.57}
+                                    size_hint:None,None
+                                    width:100
+                                    hight:100
+                                    val1:0
+                                    canvas.before:
+                                        Color:
+                                            rgba: 0, 0, 1, 1
+                                        Ellipse:
+                                            size:self.size
+                                            pos:self.pos
+
+                                        Color:
+                                            rgba: 1, 1, 4, 5
+                                        Ellipse:
+                                            size:self.size
+                                            pos:self.pos
+                                            angle_end:self.val1
+
+                                        Color:
+                                            rgba: 1, 1, 0, 1
+                                        Ellipse:
+                                            size:[self.width - 30,self.width -30]
+
+                                            pos:[(self.center_x - (self.width - 30)/2),(self.center_y -(self.hight - 30)/2)]
+                        Crd:
+                            orientation:'vertical'
+                            elevation: 0
+                            radius:0,0,0,0
+                            md_bg_color:app.theme_cls.primary_light
+                            MRLyt:
+                                md_bg_color:app.theme_cls.primary_light
+                                radius:0,0,0,0
+
+                                MDLbl:
+                                    text:'Control Process normal'
+                                    font_size:20
+                                    color:"black"
+                                    
+
+
+                                   
+    ##############################################
+
+                    Crd:
+                        spacing:10
+                        padding:0
+                        md_bg_color:app.theme_cls.primary_light
+                        elevation: 0
+                        radius:5,5,5,5
+                        orientation:'vertical'
+                        Crd:
+                            spacing:5
+                            padding:10
+
+                            md_bg_color:"#e91e63"
+                            elevation: 3
+                            radius:5,5,25,25
+                            MRLyt:
+
+                                radius:5,5,25,25
+                                md_bg_color:"#e91e63"
+                                id:bar
+                        Crd:
+                            spacing:0
+                            padding:0
+                            md_bg_color:app.theme_cls.primary_light
+                            elevation: 0
+                            radius:0,0,0,0
+                            MRLyt:
+                                md_bg_color:app.theme_cls.primary_light
+                                MDLbl:
+                                    text:' Bar graphs are the pictorial representation of \n data (generally grouped).'
+                                    
+                                    color:"black"
+
+                    Crd:
+                        spacing:10
+                        padding:0
+                        md_bg_color:app.theme_cls.primary_light
+                        elevation: 0
+                        radius:5,5,5,5
+                        orientation:'vertical'
+                        Crd:
+                            spacing:5
+                            padding:10
+
+                            md_bg_color:"#311b92"
+                            elevation: 3
+                            radius:5,5,25,25
+
+                            MRLyt:
+                                md_bg_color:"#311b92"
+                                id:wave
+
+                        Crd:
+                            spacing:0
+                            padding:0
+                            md_bg_color:app.theme_cls.primary_light
+                            elevation: 0
+                            radius:0,0,0,0
+                            MRLyt:
+                                md_bg_color:app.theme_cls.primary_light
+                                MDLbl:
+                                    text:' A chart of an ocean area on \n which is plotted synoptic wave reports \n from vessels, along with computed wave'
+                                    color:"black"
+                                   
+                    Crd:
+                        spacing:10
+                        padding:0
+                        md_bg_color:app.theme_cls.primary_light
+                        elevation: 3
+
+
+                        radius:10,10,10,10
+                        orientation:'vertical'
+                        Crd:
+                            spacing:5
+                            padding:10
+
+                            md_bg_color:"#64b5f6"
+                            elevation: 3
+                            radius:5,5,25,25
+                            MRLyt:
+                                md_bg_color:"#64b5f6"
+                                id:graph
+                        Crd:
+                            spacing:0
+                            padding:0
+                            md_bg_color:app.theme_cls.primary_light
+                            elevation: 0
+                            radius:0,0,0,0
+                            MRLyt:
+                                md_bg_color:app.theme_cls.primary_light
+                                MDLbl:
+                                    text:" An area chart is a graph \n that combines a line chart and."
+                                    color:"black"
+                                    
+
+
+    ######################
+
+
+                Crd:
+                    id:row3
+                    spacing:5
+                    padding:5
+                    md_bg_color:1,0,0,0
+                    elevation: 0
+                    radius:0,0,0,0
+                    Crd:
+                        spacing:10
+                        padding:10
+                        md_bg_color:1,0,0,0
+                        elevation: 0
+                        radius:5,5,5,5
+                        Crd:
+                            spacing:5
+                            padding:5
+                            md_bg_color:"teal"
+                            elevation: 3
+                            radius:25,25,25,25
+                            ScrollView:
+                                md_bg_color: 0,4,5,4
+
+                                MDList:
+                                    id: lis
+                                    #md_bg_color: 2,2,2,5
+
+                                    OneLineAvatarListItem:
+                                        id:lis1
+                                        #md_bg_color: 0,0,23,5
+                                        text: "menu"
+                                        ImageLeftWidget:
+                                            source: "/usr/js/python_project/kivy/project/kvproject3/img/im2.jpg"
+                                            radius:25,25,25,25
+                                    OneLineAvatarListItem:
+                                        id:li2
+                                        text: "user"
+                                        ImageLeftWidget:
+                                            source: "/usr/js/python_project/kivy/project/kvproject3/img/im2.jpg"
+                                            radius:25,25,25,25
+                                    OneLineAvatarListItem:
+                                        id:lis3
+                                        text: "email"
+                                        ImageLeftWidget:
+                                            source: "/usr/js/python_project/kivy/project/kvproject3/img/im2.jpg"
+                                            radius:25,25,25,25
+                                    OneLineAvatarListItem:
+                                        id:lis4
+                                        text: "password"
+                                        ImageLeftWidget:
+                                            source: "/usr/js/python_project/kivy/project/kvproject3/img/im2.jpg"
+                                            radius:25,25,25,25
+                                    OneLineAvatarListItem:
+                                        id:lis5
+                                        text: "name"
+                                        ImageLeftWidget:
+                                            source: "/usr/js/python_project/kivy/project/kvproject3/img/im2.jpg"
+                                            radius:25,25,25,25
+                                    OneLineAvatarListItem:
+                                        id:lis6
+                                        text: "data_list"
+                                        ImageLeftWidget:
+                                            source: "/usr/js/python_project/kivy/project/kvproject3/img/im2.jpg"
+                                            radius:25,25,25,25
+
+                        Crd:
+                            spacing:5
+                            padding:5
+                            md_bg_color:"teal"
+                            elevation: 3
+                            radius:25,25,25,25
+                            MRLyt:
+                                radius:25,25,25,25
+                                id:circle
+                    Crd:
+                        id:col2
+                        spacing:10
+                        padding:10
+                        md_bg_color:1,0,0,0
+                        elevation: 0
+                        radius:25,25,25,25
+                        MRLyt:
+                            md_bg_color:"pink"
+                            id:tap1
+
+
+
+    MRLyt:
+
+
+
+        MDNavigationDrawer:
+
+            md_bg_color: "#283593"
+
+            id: nav_drawer
+
+            Box:
+                MRLyt:
+
+                    Image:
+                        source: "/usr/js/python_project/kivy/project/kvproject3/img/scr0.jpg"
+                        pos_hint: {"center_x": .5,"center_y":.9}
+
+
+
+                    ScrollView:
+                        #do_scroll_x: False
+                        #do_scroll_y: True
+                        size_hint_y:.73
+                        #size_hint_x:.9
+
+                        md_bg_color: "blue"
+                        #pos_hint: {"center_x": .05,"center_y":.5}
+
+
+
+                        MDList:
+                            id: lis
+                            md_bg_color: "#283593"
+
+                            OneLineAvatarListItem:
+                                id:lis1
+                                #md_bg_color: 0,0,23,5
+                                text: "Menu"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr1.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:li2
+                                text: "User"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr2.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis1
+                                #md_bg_color: 0,0,23,5
+                                text: "Menu"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr3.webp"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:li2
+                                text: "User"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr4.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis3
+                                text: "Email"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr5.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis4
+                                text: "Password"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr6.png"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis5
+                                text: "Name"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr7.png"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis6
+                                text: "data_list"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr8.png"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis5
+                                text: "name"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr9.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis6
+                                text: "data_list"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr10.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:li2
+                                text: "user"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr4.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis3
+                                text: "email"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr5.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis4
+                                text: "password"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr6.png"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis5
+                                text: "name"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr7.png"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis6
+                                text: "data_list"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr8.png"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis5
+                                text: "name"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr9.jpg"
+                                    radius:25,25,25,25
+                            OneLineAvatarListItem:
+                                id:lis6
+                                text: "data_list"
+                                ImageLeftWidget:
+                                    source: "/usr/js/python_project/kivy/project/kvproject3/img/scr10.jpg"
+                                    radius:25,25,25,25

@@ -1,0 +1,96 @@
+<Box@MDBoxLayout>:
+
+<FBtn@MDFloatingActionButton>:
+
+<MBtn@MDIconButton>:
+
+<MDLbl@Label>:
+    halign:"left"
+
+<Crd@MDCard>:
+
+<MRLyt@MDRelativeLayout>:
+
+
+<login>:
+    FloatLayout:
+        size: root.width, root.height
+
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: '/usr/js/python_project/kivy/project/kvproject3/img/first4.webp'
+        MDCard:
+            size_hint: .5,.5
+            pos_hint: {"center_x": .5,"center_y":.5}
+            radius:25,25,25,25
+
+            MDScreen:
+                md_bg_color:"#29b6f6"
+                radius:25,25,25,25
+
+
+                MDLabel:
+                    text: "Login"
+                    
+                    font_size: 50
+                    halign: 'center'
+                    theme_text_color: "Custom"
+                    text_color: "blue"
+                    pos_hint: {"center_x": 0.5,"center_y":.8}
+
+
+
+
+
+
+                MDTextField:
+                    id: user
+                    hint_text: "Type your username"
+                    icon_right: "account"
+                    size_hint_x: None
+                    width: 400
+                    font_size: 18
+                    line_color_focus: 1, 1, 5, 3
+                    pos_hint: {"center_x": .5,"center_y":.65}
+
+                MDTextField:
+                    id: passwd
+                    hint_text: "Type your password"
+                    icon_right: "eye-off"
+                    size_hint_x: None
+                    width: 400
+                    font_size: 18
+                    pos_hint: {"center_x": 0.5,"center_y":.5}
+                    line_color_focus: 1, 1, 5, 3
+                    password: True
+
+                MDRoundFlatButton:
+                    text: "LOG IN"
+                    font_size: 20
+                    size_hint: .6,.05
+                    pos_hint: {"center_x": 0.5,"center_y":.35}
+                    text_color:"white"
+                    md_bg_color:"blue"
+                    on_press:
+                        root.loginck()
+                        app.root.transition.direction = 'right'
+                MDFlatButton:
+                    text: "Forgot Password?"
+                    font_size: 20
+                    theme_text_color: "Custom"
+                    text_color: "orange"
+                    pos_hint: {"center_x": 0.5,"center_y":.2}
+                    on_press:
+                        app.root.current = 'forgot1'
+                        app.root.transition.direction = 'down'
+                MDFlatButton:
+                    text: "Registor?"
+                    theme_text_color: "Custom"
+                    font_size: 15
+                    text_color: "pink"
+                    pos_hint: {"center_x": 0.5,"center_y":.1}
+                    on_press:
+                        app.root.current = 'reg'
+                        app.root.transition.direction = 'up'

@@ -1,0 +1,16 @@
+<faild>:
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'F://smartkvproject1//img/first3.webp'
+    MDRoundFlatButton:
+        text: "faild"
+        font_size: 20
+        pos_hint: {"center_x": 0.5,"center_y":.5}
+        #text_color: 5, 5, 5, 5
+        #md_bg_color: 3, 3, 3, 3
+        on_press:
+            app.root.current = 'log'
+            app.root.transition.direction = 'left'

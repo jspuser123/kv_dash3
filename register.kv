@@ -1,0 +1,60 @@
+<register>:
+
+
+    FloatLayout:
+        size: root.width, root.height
+
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'F://smartkvproject1//img/first.jpg'
+        MDLabel:
+            text: "Create an account"
+            font_size: 50
+            halign: 'center'
+            theme_text_color: "Custom"
+            text_color: "red"
+            pos_hint: {"center_y":.8}
+
+        MDTextField:
+            id: email
+            size_hint: .6,.1
+            pos_hint: {"center_x": 0.5,"center_y":.7}
+            icon_left: "email"
+            mode: "rectangle"
+            hint_text: "pls enter your email"
+        MDTextField:
+            id: user1
+            size_hint: .6,.1
+            pos_hint: {"center_x": 0.5,"center_y":.5}
+            icon_left: "account"
+            mode: "rectangle"
+            hint_text: "pls enter your name"
+        MDTextField:
+            id: passwd1
+            size_hint: .6,.1
+            pos_hint: {"center_x": 0.5,"center_y":.3}
+            icon_left: "eye-off"
+            mode: "rectangle"
+            hint_text: "pls enter your password"
+            password:True
+        #  MDRoundFlatButton:
+        MDRectangleFlatButton:
+            text: "Register"
+            font_size: 20
+            size_hint: .5,.09
+            pos_hint: {"center_x": 0.5,"center_y":.2}
+            #text_color: "yellow"
+            md_bg_color: "yellow"
+            on_press: root.entry()
+
+        MDRectangleFlatButton:
+            text: "Back To login"
+            font_size: 20
+            pos_hint: {"center_x": 0.5,"center_y":.1}
+            #text_color: 5, 5, 5, 5
+            md_bg_color: "pink"
+            on_press:
+                app.root.transition.direction = 'down'
+                app.root.current = 'log'
